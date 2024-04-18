@@ -5,15 +5,43 @@ document.addEventListener("DOMContentLoaded", function() {
     panel.addEventListener('click', () => {
       removeActiveClasses();
       panel.classList.add('active');
+
+      let latitude = parseFloat(panel.dataset.latitude);
+      let longitude = parseFloat(panel.dataset.longitude);
+      redirectMap(latitude, longitude);
     });
   });
-
   function removeActiveClasses() {
     panels.forEach(panel => {
       panel.classList.remove('active');
     });
   }
+  
 });
+const mapDiv = document.getElementById('map');
+let map;
+let marker;
+function initMap(){
+    map = new google.maps.Map(mapDiv, {
+        center: { lat: -32.88661, lng: -68.86125 },
+        zoom: 12,
+    });
+    marker = new google.maps.Marker({
+        position: { lat: -32.88661, lng: -68.86125 },
+        map: map,
+    });
+}
+
+function redirectMap(latitude, longitude) {
+    map = new google.maps.Map(mapDiv, {
+        center: { lat: latitude, lng: longitude },
+        zoom: 12,
+    });
+    marker = new google.maps.Marker({
+        position: { lat: latitude, lng: longitude },
+        map: map,
+    });
+}
 
 const hourEl = document.querySelector('.hour');
 const minuteEl = document.querySelector('.minute');

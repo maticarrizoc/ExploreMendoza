@@ -10,38 +10,46 @@
 </head>
 <body>
 	<div class="">
-	    <div class="container">
-		    <div class="panel active" style="background-image: url('images/portones.jfif')">
+	    <div class="container1">
+		    <div class="panel active" style="background-image: url('images/portones.jfif')" data-latitude="-32.88661" data-longitude="-68.86125">
 		    	<h3>Explore Mendoza</h3>
 		    </div>
-		    <div class="panel" style="background-image: url('images/viñedos.jpg')">
-		        <h3>Vineyards                                             </h3>
+		    <div class="panel" style="background-image: url('images/viñedos.jpg')" data-latitude="-33.50690611601391" data-longitude="-69.01964843192006">
+		        <h3>Vineyards</h3>
 		    </div>
-		    <div class="panel" style="background-image: url('images/aconcagua.jpg')">
+		    <div class="panel" style="background-image: url('images/aconcagua.jpg')" data-latitude="-32.80503246074121" data-longitude="-69.94114428253683">
 		        <h3>Aconcagua Mountain</h3>
 		    </div>
-		    <div class="panel" style="background-image: url('images/puentedelinca.jpg')">
+		    <div class="panel" style="background-image: url('images/puentedelinca.jpg')" data-latitude="-32.821662412014604" data-longitude="-69.92341356142936">
 		        <h3>Inca's Bridge</h3>
 		    </div>
-		    <div class="panel" style="background-image: url('images/villavicencio.webp')">
+		    <div class="panel" style="background-image: url('images/villavicencio.webp')" data-latitude="-32.52026230108696" data-longitude="-69.00673369050274">
 		        <h3>Villavicencio Reserve</h3>
 		    </div>
-		    <div class="panel" style="background-image: url('images/thehillofglory.jpg')">
+		    <div class="panel" style="background-image: url('images/thehillofglory.jpg')" data-latitude="-32.888723670179125" data-longitude="-68.89120243119812">
 		        <h3>The hill of Glory</h3>
 		    </div>
 	    </div>
-	    <div class="clock-container">
-	    	<h4>Time in Mendoza, Argentina (GTM-3)</h4>
-      		<div class="clock">
-	        	<div class="needle second"></div>
-	        	<div class="needle minute"></div>
-	        	<div class="needle hour"></div>
-	        	<div class="center-point"></div>
-	      	</div>
-	      	<div class="time"></div>
-	      	<div class="date"></div>
+	    <div class="container2">
+	    	<div class="map-container" id="map"></div>
+	    	<div class="clock-container">
+		    	<h4>Mendoza, Argentina (GTM-3)</h4>
+	      		<div class="clock">
+		        	<div class="needle second"></div>
+		        	<div class="needle minute"></div>
+		        	<div class="needle hour"></div>
+		        	<div class="center-point"></div>
+		      	</div>
+		      	<div class="time"></div>
+		      	<div class="date"></div>
+		    </div>
 	    </div>
+	    
 	</div>
     <script src="code.js"></script>
+    <script async
+	    src="https://maps.googleapis.com/maps/api/js?key=[YOUR_API_KEY]&libraries=places&callback=initMap">
+	</script>
+
 </body>
 </html>

@@ -17,10 +17,12 @@ body{
   height: 100vh;
   margin: 0;
 }
-.container {
+.container1 {
   box-sizing: border-box;
   display: flex;
-  width: 90vw;
+  justify-content: space-between;
+  width: 95vw;
+  margin: 10px;
 }
 .panel {
   font-family: "a Regular";
@@ -28,10 +30,11 @@ body{
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  justify-content: space-between;
   height: 90vh;
   border-radius: 50px;
   width: 100px;
-  margin: 10px;
+  margin: 0 5px;
   position: relative;
   transition: width 0.7s ease-in;
   overflow: hidden;
@@ -53,11 +56,13 @@ body{
   transition: transform 0.7s ease-in;
 }
 .active {
-  width: 90vw; 
+  width: 90vw;
+  cursor: auto; 
 }
-.active h3 {
+.active h3  {
   position: absolute;
   color: #FEFAE0;
+  background: transparent;
   text-shadow: 
         -1px -1px 0 #354F52,  
         1px -1px 0 #354F52,
@@ -69,24 +74,34 @@ body{
   margin: 0px;
   padding: 0 0 50px 50px;
   writing-mode: horizontal-tb;
-  transform: rotate(0deg); 
+  transform: rotate(0deg);
+}
+.container2 {
+  display: flex;
+  width: 90vw;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.map-container {
+  width: 65vw;
+  height: 50vh;
+  margin: 0 10px 10px 10px;
+  border-radius: 50px;
 }
 /* Clock */
 .clock-container {
   font-family: "a Regular";
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  /*border: 0.1px solid #354F52;
-  border-radius: 5px;*/
-  padding: 5px;
+  justify-content: center;
   color: #6B9080;
+  padding: 0 10px;
 }
 .clock {
   position: relative;
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   border: 0.01px solid #354F52;
   border-radius: 100%;
 }
@@ -102,19 +117,19 @@ body{
 }
 .needle.hour {
   transform: translate(-50%, -100%) rotate(0deg);
-  height: 25px;
+  height: 35px;
   width: 2px;
   border-top: 0.5px solid #6B9080;
 }
 .needle.minute {
   transform: translate(-50%, -100%) rotate(0deg);
-  height: 49px;
+  height: 70px;
   width: 2px;
   border-top: 0.5px solid #6B9080;
 }
 .needle.second {
   transform: translate(-50%, -100%) rotate(0deg);
-  height: 48px;
+  height: 70px;
   width: 1px;
   background-color: #6B9080;
   transition: 1s;
@@ -141,8 +156,11 @@ body{
   transform: translate(-50%, -50%);
   border-radius: 50%;
 }
+h4{
+  font-size: 24px;
+}
 .time {
-  font-size: 20px;
+  font-size: 30px;
   color: #354F52;
 }
 .date {
@@ -153,12 +171,12 @@ body{
 }
 
 @media only screen and (max-width: 900px){
-  .container {
+  .container1 {
     display: flex;
     flex-direction: column;
   }
   .panel {
-    width: 90vw;
+    width: 95vw;
     border-radius: 25px;
     height: 5vh;
     position: relative;
@@ -178,8 +196,16 @@ body{
     font-size: 30px;
     padding: 0 0 15px 15px;
   }
-  .clock-container h4{
-    font-size: 20px;
+  .container2 {
+    display: block;
+  }
+  .map-container {
+    width: 95vw;
+    height: 50vh;
+    margin: 0 10px 10px 10px;
+    border-radius: 50px;
+  }
+  .clock-container{
+    margin-bottom: 10px;
   }
 }
-
